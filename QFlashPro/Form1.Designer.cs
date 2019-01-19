@@ -136,7 +136,7 @@
             this.customInfoLabel.AutoSize = true;
             this.customInfoLabel.Location = new System.Drawing.Point(11, 22);
             this.customInfoLabel.Name = "customInfoLabel";
-            this.customInfoLabel.Size = new System.Drawing.Size(72, 14);
+            this.customInfoLabel.Size = new System.Drawing.Size(64, 13);
             this.customInfoLabel.TabIndex = 0;
             this.customInfoLabel.Text = "Custom info";
             // 
@@ -158,7 +158,7 @@
             this.produceInfoTextbox.Location = new System.Drawing.Point(101, 50);
             this.produceInfoTextbox.Name = "produceInfoTextbox";
             this.produceInfoTextbox.ReadOnly = true;
-            this.produceInfoTextbox.Size = new System.Drawing.Size(100, 22);
+            this.produceInfoTextbox.Size = new System.Drawing.Size(100, 21);
             this.produceInfoTextbox.TabIndex = 3;
             // 
             // customInfoTextbox
@@ -166,15 +166,15 @@
             this.customInfoTextbox.Location = new System.Drawing.Point(102, 22);
             this.customInfoTextbox.Name = "customInfoTextbox";
             this.customInfoTextbox.ReadOnly = true;
-            this.customInfoTextbox.Size = new System.Drawing.Size(100, 22);
+            this.customInfoTextbox.Size = new System.Drawing.Size(100, 21);
             this.customInfoTextbox.TabIndex = 2;
             // 
             // produceInfoLabel
             // 
             this.produceInfoLabel.AutoSize = true;
-            this.produceInfoLabel.Location = new System.Drawing.Point(13, 48);
+            this.produceInfoLabel.Location = new System.Drawing.Point(11, 48);
             this.produceInfoLabel.Name = "produceInfoLabel";
-            this.produceInfoLabel.Size = new System.Drawing.Size(76, 14);
+            this.produceInfoLabel.Size = new System.Drawing.Size(67, 13);
             this.produceInfoLabel.TabIndex = 1;
             this.produceInfoLabel.Text = "Produce info";
             // 
@@ -196,7 +196,7 @@
             this.pidTextbox.Location = new System.Drawing.Point(57, 46);
             this.pidTextbox.Name = "pidTextbox";
             this.pidTextbox.ReadOnly = true;
-            this.pidTextbox.Size = new System.Drawing.Size(115, 22);
+            this.pidTextbox.Size = new System.Drawing.Size(115, 21);
             this.pidTextbox.TabIndex = 3;
             // 
             // vidTextbox
@@ -204,7 +204,7 @@
             this.vidTextbox.Location = new System.Drawing.Point(57, 17);
             this.vidTextbox.Name = "vidTextbox";
             this.vidTextbox.ReadOnly = true;
-            this.vidTextbox.Size = new System.Drawing.Size(115, 22);
+            this.vidTextbox.Size = new System.Drawing.Size(115, 21);
             this.vidTextbox.TabIndex = 2;
             // 
             // pidLabel
@@ -212,7 +212,7 @@
             this.pidLabel.AutoSize = true;
             this.pidLabel.Location = new System.Drawing.Point(17, 48);
             this.pidLabel.Name = "pidLabel";
-            this.pidLabel.Size = new System.Drawing.Size(26, 14);
+            this.pidLabel.Size = new System.Drawing.Size(24, 13);
             this.pidLabel.TabIndex = 1;
             this.pidLabel.Text = "PID";
             // 
@@ -221,7 +221,7 @@
             this.vidLabel.AutoSize = true;
             this.vidLabel.Location = new System.Drawing.Point(16, 22);
             this.vidLabel.Name = "vidLabel";
-            this.vidLabel.Size = new System.Drawing.Size(27, 14);
+            this.vidLabel.Size = new System.Drawing.Size(24, 13);
             this.vidLabel.TabIndex = 0;
             this.vidLabel.Text = "VID";
             // 
@@ -249,7 +249,7 @@
             this.tildaTexbox.Location = new System.Drawing.Point(200, 53);
             this.tildaTexbox.Name = "tildaTexbox";
             this.tildaTexbox.ReadOnly = true;
-            this.tildaTexbox.Size = new System.Drawing.Size(72, 22);
+            this.tildaTexbox.Size = new System.Drawing.Size(72, 21);
             this.tildaTexbox.TabIndex = 9;
             // 
             // tildaLabel
@@ -257,7 +257,7 @@
             this.tildaLabel.AutoSize = true;
             this.tildaLabel.Location = new System.Drawing.Point(175, 57);
             this.tildaLabel.Name = "tildaLabel";
-            this.tildaLabel.Size = new System.Drawing.Size(16, 14);
+            this.tildaLabel.Size = new System.Drawing.Size(15, 13);
             this.tildaLabel.TabIndex = 8;
             this.tildaLabel.Text = "~";
             // 
@@ -266,7 +266,7 @@
             this.autoTextBox.Location = new System.Drawing.Point(238, 21);
             this.autoTextBox.Name = "autoTextBox";
             this.autoTextBox.ReadOnly = true;
-            this.autoTextBox.Size = new System.Drawing.Size(34, 22);
+            this.autoTextBox.Size = new System.Drawing.Size(34, 21);
             this.autoTextBox.TabIndex = 7;
             // 
             // autoLabel
@@ -274,7 +274,7 @@
             this.autoLabel.AutoSize = true;
             this.autoLabel.Location = new System.Drawing.Point(199, 24);
             this.autoLabel.Name = "autoLabel";
-            this.autoLabel.Size = new System.Drawing.Size(34, 14);
+            this.autoLabel.Size = new System.Drawing.Size(30, 13);
             this.autoLabel.TabIndex = 6;
             this.autoLabel.Text = "Auto";
             // 
@@ -283,7 +283,7 @@
             this.serialNumberTextbox.Location = new System.Drawing.Point(80, 83);
             this.serialNumberTextbox.Name = "serialNumberTextbox";
             this.serialNumberTextbox.ReadOnly = true;
-            this.serialNumberTextbox.Size = new System.Drawing.Size(192, 22);
+            this.serialNumberTextbox.Size = new System.Drawing.Size(192, 21);
             this.serialNumberTextbox.TabIndex = 5;
             // 
             // serialNumberLabel
@@ -300,7 +300,7 @@
             this.increaseArrangeTextbox.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
             this.increaseArrangeTextbox.Name = "increaseArrangeTextbox";
             this.increaseArrangeTextbox.ReadOnly = true;
-            this.increaseArrangeTextbox.Size = new System.Drawing.Size(83, 22);
+            this.increaseArrangeTextbox.Size = new System.Drawing.Size(83, 21);
             this.increaseArrangeTextbox.TabIndex = 3;
             // 
             // fixedPrefixTextbox
@@ -308,7 +308,7 @@
             this.fixedPrefixTextbox.Location = new System.Drawing.Point(79, 21);
             this.fixedPrefixTextbox.Name = "fixedPrefixTextbox";
             this.fixedPrefixTextbox.ReadOnly = true;
-            this.fixedPrefixTextbox.Size = new System.Drawing.Size(83, 22);
+            this.fixedPrefixTextbox.Size = new System.Drawing.Size(83, 21);
             this.fixedPrefixTextbox.TabIndex = 2;
             // 
             // IncreaseArrangeLabel
@@ -350,7 +350,7 @@
             this.scsiRevTextbox.Location = new System.Drawing.Point(101, 68);
             this.scsiRevTextbox.Name = "scsiRevTextbox";
             this.scsiRevTextbox.ReadOnly = true;
-            this.scsiRevTextbox.Size = new System.Drawing.Size(100, 22);
+            this.scsiRevTextbox.Size = new System.Drawing.Size(100, 21);
             this.scsiRevTextbox.TabIndex = 5;
             // 
             // scsiRevLabel
@@ -358,7 +358,7 @@
             this.scsiRevLabel.AutoSize = true;
             this.scsiRevLabel.Location = new System.Drawing.Point(15, 72);
             this.scsiRevLabel.Name = "scsiRevLabel";
-            this.scsiRevLabel.Size = new System.Drawing.Size(58, 14);
+            this.scsiRevLabel.Size = new System.Drawing.Size(52, 13);
             this.scsiRevLabel.TabIndex = 4;
             this.scsiRevLabel.Text = "SCSI REV";
             // 
@@ -367,7 +367,7 @@
             this.produceInfoScsiTextbox.Location = new System.Drawing.Point(101, 41);
             this.produceInfoScsiTextbox.Name = "produceInfoScsiTextbox";
             this.produceInfoScsiTextbox.ReadOnly = true;
-            this.produceInfoScsiTextbox.Size = new System.Drawing.Size(100, 22);
+            this.produceInfoScsiTextbox.Size = new System.Drawing.Size(100, 21);
             this.produceInfoScsiTextbox.TabIndex = 3;
             // 
             // customInfoScsiTextbox
@@ -375,7 +375,7 @@
             this.customInfoScsiTextbox.Location = new System.Drawing.Point(101, 15);
             this.customInfoScsiTextbox.Name = "customInfoScsiTextbox";
             this.customInfoScsiTextbox.ReadOnly = true;
-            this.customInfoScsiTextbox.Size = new System.Drawing.Size(100, 22);
+            this.customInfoScsiTextbox.Size = new System.Drawing.Size(100, 21);
             this.customInfoScsiTextbox.TabIndex = 2;
             // 
             // produceInfoScsiLabel
@@ -383,7 +383,7 @@
             this.produceInfoScsiLabel.AutoSize = true;
             this.produceInfoScsiLabel.Location = new System.Drawing.Point(14, 45);
             this.produceInfoScsiLabel.Name = "produceInfoScsiLabel";
-            this.produceInfoScsiLabel.Size = new System.Drawing.Size(76, 14);
+            this.produceInfoScsiLabel.Size = new System.Drawing.Size(67, 13);
             this.produceInfoScsiLabel.TabIndex = 1;
             this.produceInfoScsiLabel.Text = "Produce info";
             // 
@@ -392,7 +392,7 @@
             this.customInfoScsiLabel.AutoSize = true;
             this.customInfoScsiLabel.Location = new System.Drawing.Point(13, 19);
             this.customInfoScsiLabel.Name = "customInfoScsiLabel";
-            this.customInfoScsiLabel.Size = new System.Drawing.Size(72, 14);
+            this.customInfoScsiLabel.Size = new System.Drawing.Size(64, 13);
             this.customInfoScsiLabel.TabIndex = 0;
             this.customInfoScsiLabel.Text = "Custom info";
             // 
@@ -414,7 +414,7 @@
             this.memoryTextbox.Location = new System.Drawing.Point(83, 51);
             this.memoryTextbox.Name = "memoryTextbox";
             this.memoryTextbox.ReadOnly = true;
-            this.memoryTextbox.Size = new System.Drawing.Size(89, 22);
+            this.memoryTextbox.Size = new System.Drawing.Size(89, 21);
             this.memoryTextbox.TabIndex = 3;
             // 
             // controllerTextbox
@@ -422,7 +422,7 @@
             this.controllerTextbox.Location = new System.Drawing.Point(83, 19);
             this.controllerTextbox.Name = "controllerTextbox";
             this.controllerTextbox.ReadOnly = true;
-            this.controllerTextbox.Size = new System.Drawing.Size(89, 22);
+            this.controllerTextbox.Size = new System.Drawing.Size(89, 21);
             this.controllerTextbox.TabIndex = 2;
             // 
             // memoryLabel
@@ -430,7 +430,7 @@
             this.memoryLabel.AutoSize = true;
             this.memoryLabel.Location = new System.Drawing.Point(7, 55);
             this.memoryLabel.Name = "memoryLabel";
-            this.memoryLabel.Size = new System.Drawing.Size(50, 14);
+            this.memoryLabel.Size = new System.Drawing.Size(45, 13);
             this.memoryLabel.TabIndex = 1;
             this.memoryLabel.Text = "Memory";
             // 
@@ -439,7 +439,7 @@
             this.controllerLabel.AutoSize = true;
             this.controllerLabel.Location = new System.Drawing.Point(6, 23);
             this.controllerLabel.Name = "controllerLabel";
-            this.controllerLabel.Size = new System.Drawing.Size(59, 14);
+            this.controllerLabel.Size = new System.Drawing.Size(54, 13);
             this.controllerLabel.TabIndex = 0;
             this.controllerLabel.Text = "Controller";
             // 
@@ -450,7 +450,7 @@
             this.updateDiskInfoGroupbox.Controls.Add(this.vidPidGroupbox);
             this.updateDiskInfoGroupbox.Controls.Add(this.scsiInfoGroupbox);
             this.updateDiskInfoGroupbox.Controls.Add(this.serialNumberGroupbox);
-            this.updateDiskInfoGroupbox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.updateDiskInfoGroupbox.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.updateDiskInfoGroupbox.Location = new System.Drawing.Point(18, 27);
             this.updateDiskInfoGroupbox.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.updateDiskInfoGroupbox.Name = "updateDiskInfoGroupbox";
@@ -482,46 +482,51 @@
             // 
             // textBox4_2
             // 
+            this.textBox4_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox4_2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox4_2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox4_2.Location = new System.Drawing.Point(74, 139);
             this.textBox4_2.Name = "textBox4_2";
-            this.textBox4_2.ReadOnly = true;
             this.textBox4_2.Size = new System.Drawing.Size(292, 30);
             this.textBox4_2.TabIndex = 11;
             // 
             // textBox3_2
             // 
+            this.textBox3_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox3_2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox3_2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox3_2.Location = new System.Drawing.Point(74, 97);
             this.textBox3_2.Name = "textBox3_2";
-            this.textBox3_2.ReadOnly = true;
             this.textBox3_2.Size = new System.Drawing.Size(292, 30);
             this.textBox3_2.TabIndex = 10;
             // 
             // textBox2_2
             // 
+            this.textBox2_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox2_2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox2_2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox2_2.Location = new System.Drawing.Point(74, 53);
             this.textBox2_2.Name = "textBox2_2";
-            this.textBox2_2.ReadOnly = true;
             this.textBox2_2.Size = new System.Drawing.Size(292, 30);
             this.textBox2_2.TabIndex = 9;
             // 
             // textBox1_2
             // 
+            this.textBox1_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox1_2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox1_2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1_2.Location = new System.Drawing.Point(74, 13);
             this.textBox1_2.Name = "textBox1_2";
-            this.textBox1_2.ReadOnly = true;
             this.textBox1_2.Size = new System.Drawing.Size(292, 30);
             this.textBox1_2.TabIndex = 8;
             // 
             // textBox4_1
             // 
+            this.textBox4_1.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox4_1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox4_1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox4_1.Location = new System.Drawing.Point(30, 141);
             this.textBox4_1.Name = "textBox4_1";
-            this.textBox4_1.ReadOnly = true;
             this.textBox4_1.Size = new System.Drawing.Size(32, 27);
             this.textBox4_1.TabIndex = 7;
             // 
@@ -539,10 +544,11 @@
             // 
             // textBox3_1
             // 
+            this.textBox3_1.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox3_1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox3_1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox3_1.Location = new System.Drawing.Point(30, 99);
             this.textBox3_1.Name = "textBox3_1";
-            this.textBox3_1.ReadOnly = true;
             this.textBox3_1.Size = new System.Drawing.Size(32, 27);
             this.textBox3_1.TabIndex = 5;
             // 
@@ -560,19 +566,22 @@
             // 
             // textBox2_1
             // 
+            this.textBox2_1.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox2_1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox2_1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox2_1.Location = new System.Drawing.Point(30, 55);
             this.textBox2_1.Name = "textBox2_1";
-            this.textBox2_1.ReadOnly = true;
             this.textBox2_1.Size = new System.Drawing.Size(32, 27);
             this.textBox2_1.TabIndex = 3;
             // 
             // textBox1_1
             // 
+            this.textBox1_1.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox1_1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox1_1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.textBox1_1.Location = new System.Drawing.Point(30, 15);
             this.textBox1_1.Name = "textBox1_1";
-            this.textBox1_1.ReadOnly = true;
             this.textBox1_1.Size = new System.Drawing.Size(32, 27);
             this.textBox1_1.TabIndex = 2;
             // 
@@ -623,46 +632,51 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(76, 139);
             this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(292, 30);
             this.textBox1.TabIndex = 11;
             // 
             // textBox2
             // 
+            this.textBox2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox2.Location = new System.Drawing.Point(76, 97);
             this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(292, 30);
             this.textBox2.TabIndex = 10;
             // 
             // textBox3
             // 
+            this.textBox3.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox3.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox3.Location = new System.Drawing.Point(76, 54);
             this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(292, 30);
             this.textBox3.TabIndex = 9;
             // 
             // textBox4
             // 
+            this.textBox4.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox4.Location = new System.Drawing.Point(76, 11);
             this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(292, 30);
             this.textBox4.TabIndex = 8;
             // 
             // textBox5
             // 
+            this.textBox5.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox5.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox5.Location = new System.Drawing.Point(28, 141);
             this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(32, 27);
             this.textBox5.TabIndex = 7;
             // 
@@ -680,10 +694,11 @@
             // 
             // textBox6
             // 
+            this.textBox6.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox6.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox6.Location = new System.Drawing.Point(28, 99);
             this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(32, 27);
             this.textBox6.TabIndex = 5;
             // 
@@ -701,19 +716,21 @@
             // 
             // textBox7
             // 
+            this.textBox7.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox7.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox7.Location = new System.Drawing.Point(28, 56);
             this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(32, 27);
             this.textBox7.TabIndex = 3;
             // 
             // textBox8
             // 
+            this.textBox8.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox8.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox8.Location = new System.Drawing.Point(28, 13);
             this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(32, 27);
             this.textBox8.TabIndex = 2;
             // 
@@ -764,46 +781,51 @@
             // 
             // textBox9
             // 
+            this.textBox9.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox9.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox9.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox9.Location = new System.Drawing.Point(74, 139);
             this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(292, 30);
             this.textBox9.TabIndex = 11;
             // 
             // textBox10
             // 
+            this.textBox10.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox10.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox10.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox10.Location = new System.Drawing.Point(74, 97);
             this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(292, 30);
             this.textBox10.TabIndex = 10;
             // 
             // textBox11
             // 
+            this.textBox11.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox11.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox11.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox11.Location = new System.Drawing.Point(74, 54);
             this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(292, 30);
             this.textBox11.TabIndex = 9;
             // 
             // textBox12
             // 
+            this.textBox12.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox12.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox12.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox12.Location = new System.Drawing.Point(74, 11);
             this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
             this.textBox12.Size = new System.Drawing.Size(292, 30);
             this.textBox12.TabIndex = 8;
             // 
             // textBox13
             // 
+            this.textBox13.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox13.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox13.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox13.Location = new System.Drawing.Point(35, 141);
             this.textBox13.Name = "textBox13";
-            this.textBox13.ReadOnly = true;
             this.textBox13.Size = new System.Drawing.Size(32, 27);
             this.textBox13.TabIndex = 7;
             // 
@@ -821,10 +843,11 @@
             // 
             // textBox14
             // 
+            this.textBox14.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox14.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox14.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox14.Location = new System.Drawing.Point(35, 99);
             this.textBox14.Name = "textBox14";
-            this.textBox14.ReadOnly = true;
             this.textBox14.Size = new System.Drawing.Size(32, 27);
             this.textBox14.TabIndex = 5;
             // 
@@ -842,19 +865,21 @@
             // 
             // textBox15
             // 
+            this.textBox15.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox15.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox15.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox15.Location = new System.Drawing.Point(35, 56);
             this.textBox15.Name = "textBox15";
-            this.textBox15.ReadOnly = true;
             this.textBox15.Size = new System.Drawing.Size(32, 27);
             this.textBox15.TabIndex = 3;
             // 
             // textBox16
             // 
+            this.textBox16.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox16.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox16.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox16.Location = new System.Drawing.Point(35, 13);
             this.textBox16.Name = "textBox16";
-            this.textBox16.ReadOnly = true;
             this.textBox16.Size = new System.Drawing.Size(32, 27);
             this.textBox16.TabIndex = 2;
             // 
@@ -905,46 +930,51 @@
             // 
             // textBox17
             // 
+            this.textBox17.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox17.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox17.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox17.Location = new System.Drawing.Point(74, 139);
             this.textBox17.Name = "textBox17";
-            this.textBox17.ReadOnly = true;
             this.textBox17.Size = new System.Drawing.Size(292, 30);
             this.textBox17.TabIndex = 11;
             // 
             // textBox18
             // 
+            this.textBox18.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox18.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox18.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox18.Location = new System.Drawing.Point(74, 97);
             this.textBox18.Name = "textBox18";
-            this.textBox18.ReadOnly = true;
             this.textBox18.Size = new System.Drawing.Size(292, 30);
             this.textBox18.TabIndex = 10;
             // 
             // textBox19
             // 
+            this.textBox19.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox19.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox19.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox19.Location = new System.Drawing.Point(74, 53);
             this.textBox19.Name = "textBox19";
-            this.textBox19.ReadOnly = true;
             this.textBox19.Size = new System.Drawing.Size(292, 30);
             this.textBox19.TabIndex = 9;
             // 
             // textBox20
             // 
+            this.textBox20.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox20.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox20.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox20.Location = new System.Drawing.Point(74, 13);
             this.textBox20.Name = "textBox20";
-            this.textBox20.ReadOnly = true;
             this.textBox20.Size = new System.Drawing.Size(292, 30);
             this.textBox20.TabIndex = 8;
             // 
             // textBox21
             // 
+            this.textBox21.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox21.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox21.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox21.Location = new System.Drawing.Point(36, 141);
             this.textBox21.Name = "textBox21";
-            this.textBox21.ReadOnly = true;
             this.textBox21.Size = new System.Drawing.Size(32, 27);
             this.textBox21.TabIndex = 7;
             // 
@@ -962,10 +992,11 @@
             // 
             // textBox22
             // 
+            this.textBox22.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox22.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox22.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox22.Location = new System.Drawing.Point(36, 99);
             this.textBox22.Name = "textBox22";
-            this.textBox22.ReadOnly = true;
             this.textBox22.Size = new System.Drawing.Size(32, 27);
             this.textBox22.TabIndex = 5;
             // 
@@ -983,19 +1014,21 @@
             // 
             // textBox23
             // 
+            this.textBox23.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox23.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox23.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox23.Location = new System.Drawing.Point(36, 55);
             this.textBox23.Name = "textBox23";
-            this.textBox23.ReadOnly = true;
             this.textBox23.Size = new System.Drawing.Size(32, 27);
             this.textBox23.TabIndex = 3;
             // 
             // textBox24
             // 
+            this.textBox24.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox24.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox24.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox24.Location = new System.Drawing.Point(36, 15);
             this.textBox24.Name = "textBox24";
-            this.textBox24.ReadOnly = true;
             this.textBox24.Size = new System.Drawing.Size(32, 27);
             this.textBox24.TabIndex = 2;
             // 
