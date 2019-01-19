@@ -15,5 +15,30 @@ namespace QFlashPro
         {
             InitializeComponent();
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void massUpdateButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void updateFirmwareButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void updateDiskInfoButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
