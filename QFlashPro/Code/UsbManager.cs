@@ -85,7 +85,7 @@
 
             long sn = long.Parse(serial,System.Globalization.NumberStyles.AllowHexSpecifier);
 
-            return sn.ToString();
+            return serial;
         }
 
         private static string parseVenFromDeviceID(string deviceId)
@@ -137,9 +137,7 @@
 
             foreach (DriveInfo drive in drives)
             {
-                string diskName = drive.Name;
-                ushort vid = 0;
-                ushort pid = 0;
+                string diskName = drive.Name;               
                 // Add the HDD to the list (use the Model field as the item's caption)
                 UsbInfo curUsbInfo = new UsbInfo();
                 GetDriveVidPid(diskName, ref curUsbInfo);

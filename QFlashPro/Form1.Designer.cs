@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.customInfoLabel = new System.Windows.Forms.Label();
             this.usbInfoGroupbox = new System.Windows.Forms.GroupBox();
             this.produceInfoTextbox = new System.Windows.Forms.TextBox();
@@ -63,10 +64,7 @@
             this.controllerLabel = new System.Windows.Forms.Label();
             this.updateDiskInfoGroupbox = new System.Windows.Forms.GroupBox();
             this.firstGroupBox = new System.Windows.Forms.GroupBox();
-            this.textBox4_2 = new System.Windows.Forms.TextBox();
-            this.textBox3_2 = new System.Windows.Forms.TextBox();
-            this.textBox2_2 = new System.Windows.Forms.TextBox();
-            this.textBox1_2 = new System.Windows.Forms.TextBox();
+            this.textBox1_2 = new System.Windows.Forms.RichTextBox();
             this.textBox4_1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox3_1 = new System.Windows.Forms.TextBox();
@@ -76,10 +74,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -89,10 +83,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
@@ -102,10 +92,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox22 = new System.Windows.Forms.TextBox();
@@ -119,6 +105,21 @@
             this.massUpdateButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.refreshButton = new System.Windows.Forms.Button();
+            this.textBox2_2 = new System.Windows.Forms.RichTextBox();
+            this.textBox3_2 = new System.Windows.Forms.RichTextBox();
+            this.textBox4_2 = new System.Windows.Forms.RichTextBox();
+            this.textBox8_2 = new System.Windows.Forms.RichTextBox();
+            this.textBox7_2 = new System.Windows.Forms.RichTextBox();
+            this.textBox6_2 = new System.Windows.Forms.RichTextBox();
+            this.textBox5_2 = new System.Windows.Forms.RichTextBox();
+            this.textBox16_2 = new System.Windows.Forms.RichTextBox();
+            this.textBox15_2 = new System.Windows.Forms.RichTextBox();
+            this.textBox14_2 = new System.Windows.Forms.RichTextBox();
+            this.textBox13_2 = new System.Windows.Forms.RichTextBox();
+            this.textBox12_2 = new System.Windows.Forms.RichTextBox();
+            this.textBox11_2 = new System.Windows.Forms.RichTextBox();
+            this.textBox10_2 = new System.Windows.Forms.RichTextBox();
+            this.textBox9_2 = new System.Windows.Forms.RichTextBox();
             this.usbInfoGroupbox.SuspendLayout();
             this.vidPidGroupbox.SuspendLayout();
             this.serialNumberGroupbox.SuspendLayout();
@@ -480,45 +481,20 @@
             this.firstGroupBox.TabIndex = 6;
             this.firstGroupBox.TabStop = false;
             // 
-            // textBox4_2
-            // 
-            this.textBox4_2.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox4_2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox4_2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4_2.Location = new System.Drawing.Point(74, 139);
-            this.textBox4_2.Name = "textBox4_2";
-            this.textBox4_2.Size = new System.Drawing.Size(292, 30);
-            this.textBox4_2.TabIndex = 11;
-            // 
-            // textBox3_2
-            // 
-            this.textBox3_2.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox3_2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox3_2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3_2.Location = new System.Drawing.Point(74, 97);
-            this.textBox3_2.Name = "textBox3_2";
-            this.textBox3_2.Size = new System.Drawing.Size(292, 30);
-            this.textBox3_2.TabIndex = 10;
-            // 
-            // textBox2_2
-            // 
-            this.textBox2_2.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox2_2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox2_2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2_2.Location = new System.Drawing.Point(74, 53);
-            this.textBox2_2.Name = "textBox2_2";
-            this.textBox2_2.Size = new System.Drawing.Size(292, 30);
-            this.textBox2_2.TabIndex = 9;
-            // 
             // textBox1_2
             // 
             this.textBox1_2.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox1_2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox1_2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1_2.Location = new System.Drawing.Point(74, 13);
+            this.textBox1_2.CausesValidation = false;
+            this.textBox1_2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox1_2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox1_2.Location = new System.Drawing.Point(72, 13);
             this.textBox1_2.Name = "textBox1_2";
+            this.textBox1_2.ReadOnly = true;
+            this.textBox1_2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.textBox1_2.Size = new System.Drawing.Size(292, 30);
-            this.textBox1_2.TabIndex = 8;
+            this.textBox1_2.TabIndex = 12;
+            this.textBox1_2.Text = "";
             // 
             // textBox4_1
             // 
@@ -611,13 +587,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.textBox8_2);
             this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.textBox7_2);
             this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.textBox6_2);
             this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.textBox5_2);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.textBox7);
             this.groupBox1.Controls.Add(this.textBox8);
@@ -630,52 +606,12 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(76, 139);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(292, 30);
-            this.textBox1.TabIndex = 11;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(76, 97);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(292, 30);
-            this.textBox2.TabIndex = 10;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox3.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(76, 54);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(292, 30);
-            this.textBox3.TabIndex = 9;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(76, 11);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(292, 30);
-            this.textBox4.TabIndex = 8;
-            // 
             // textBox5
             // 
             this.textBox5.BackColor = System.Drawing.Color.Gainsboro;
             this.textBox5.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox5.Location = new System.Drawing.Point(28, 141);
+            this.textBox5.Location = new System.Drawing.Point(28, 142);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(32, 27);
             this.textBox5.TabIndex = 7;
@@ -760,15 +696,15 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox9);
-            this.groupBox2.Controls.Add(this.textBox10);
-            this.groupBox2.Controls.Add(this.textBox11);
-            this.groupBox2.Controls.Add(this.textBox12);
+            this.groupBox2.Controls.Add(this.textBox16_2);
             this.groupBox2.Controls.Add(this.textBox13);
+            this.groupBox2.Controls.Add(this.textBox15_2);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.textBox14);
+            this.groupBox2.Controls.Add(this.textBox14_2);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.textBox15);
+            this.groupBox2.Controls.Add(this.textBox13_2);
             this.groupBox2.Controls.Add(this.textBox16);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
@@ -778,46 +714,6 @@
             this.groupBox2.Size = new System.Drawing.Size(373, 175);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
-            // 
-            // textBox9
-            // 
-            this.textBox9.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox9.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox9.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox9.Location = new System.Drawing.Point(74, 139);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(292, 30);
-            this.textBox9.TabIndex = 11;
-            // 
-            // textBox10
-            // 
-            this.textBox10.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox10.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox10.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox10.Location = new System.Drawing.Point(74, 97);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(292, 30);
-            this.textBox10.TabIndex = 10;
-            // 
-            // textBox11
-            // 
-            this.textBox11.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox11.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox11.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox11.Location = new System.Drawing.Point(74, 54);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(292, 30);
-            this.textBox11.TabIndex = 9;
-            // 
-            // textBox12
-            // 
-            this.textBox12.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox12.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox12.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox12.Location = new System.Drawing.Point(74, 11);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(292, 30);
-            this.textBox12.TabIndex = 8;
             // 
             // textBox13
             // 
@@ -909,16 +805,16 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox17);
-            this.groupBox3.Controls.Add(this.textBox18);
-            this.groupBox3.Controls.Add(this.textBox19);
-            this.groupBox3.Controls.Add(this.textBox20);
             this.groupBox3.Controls.Add(this.textBox21);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.textBox22);
+            this.groupBox3.Controls.Add(this.textBox12_2);
             this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.textBox11_2);
             this.groupBox3.Controls.Add(this.textBox23);
+            this.groupBox3.Controls.Add(this.textBox10_2);
             this.groupBox3.Controls.Add(this.textBox24);
+            this.groupBox3.Controls.Add(this.textBox9_2);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -927,46 +823,6 @@
             this.groupBox3.Size = new System.Drawing.Size(373, 175);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
-            // 
-            // textBox17
-            // 
-            this.textBox17.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox17.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox17.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox17.Location = new System.Drawing.Point(74, 139);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(292, 30);
-            this.textBox17.TabIndex = 11;
-            // 
-            // textBox18
-            // 
-            this.textBox18.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox18.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox18.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox18.Location = new System.Drawing.Point(74, 97);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(292, 30);
-            this.textBox18.TabIndex = 10;
-            // 
-            // textBox19
-            // 
-            this.textBox19.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox19.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox19.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox19.Location = new System.Drawing.Point(74, 53);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(292, 30);
-            this.textBox19.TabIndex = 9;
-            // 
-            // textBox20
-            // 
-            this.textBox20.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox20.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox20.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox20.Location = new System.Drawing.Point(74, 13);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(292, 30);
-            this.textBox20.TabIndex = 8;
             // 
             // textBox21
             // 
@@ -1111,6 +967,231 @@
             this.refreshButton.UseVisualStyleBackColor = true;
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
+            // textBox2_2
+            // 
+            this.textBox2_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox2_2.CausesValidation = false;
+            this.textBox2_2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox2_2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox2_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox2_2.Location = new System.Drawing.Point(72, 53);
+            this.textBox2_2.Name = "textBox2_2";
+            this.textBox2_2.ReadOnly = true;
+            this.textBox2_2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.textBox2_2.Size = new System.Drawing.Size(292, 30);
+            this.textBox2_2.TabIndex = 13;
+            this.textBox2_2.Text = "";
+            // 
+            // textBox3_2
+            // 
+            this.textBox3_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox3_2.CausesValidation = false;
+            this.textBox3_2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox3_2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox3_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox3_2.Location = new System.Drawing.Point(72, 97);
+            this.textBox3_2.Name = "textBox3_2";
+            this.textBox3_2.ReadOnly = true;
+            this.textBox3_2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.textBox3_2.Size = new System.Drawing.Size(292, 30);
+            this.textBox3_2.TabIndex = 14;
+            this.textBox3_2.Text = "";
+            // 
+            // textBox4_2
+            // 
+            this.textBox4_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox4_2.CausesValidation = false;
+            this.textBox4_2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox4_2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox4_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox4_2.Location = new System.Drawing.Point(72, 139);
+            this.textBox4_2.Name = "textBox4_2";
+            this.textBox4_2.ReadOnly = true;
+            this.textBox4_2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.textBox4_2.Size = new System.Drawing.Size(292, 30);
+            this.textBox4_2.TabIndex = 15;
+            this.textBox4_2.Text = "";
+            // 
+            // textBox8_2
+            // 
+            this.textBox8_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox8_2.CausesValidation = false;
+            this.textBox8_2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox8_2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox8_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox8_2.Location = new System.Drawing.Point(70, 140);
+            this.textBox8_2.Name = "textBox8_2";
+            this.textBox8_2.ReadOnly = true;
+            this.textBox8_2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.textBox8_2.Size = new System.Drawing.Size(292, 30);
+            this.textBox8_2.TabIndex = 19;
+            this.textBox8_2.Text = "";
+            // 
+            // textBox7_2
+            // 
+            this.textBox7_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox7_2.CausesValidation = false;
+            this.textBox7_2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox7_2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox7_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox7_2.Location = new System.Drawing.Point(70, 97);
+            this.textBox7_2.Name = "textBox7_2";
+            this.textBox7_2.ReadOnly = true;
+            this.textBox7_2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.textBox7_2.Size = new System.Drawing.Size(292, 30);
+            this.textBox7_2.TabIndex = 18;
+            this.textBox7_2.Text = "";
+            // 
+            // textBox6_2
+            // 
+            this.textBox6_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox6_2.CausesValidation = false;
+            this.textBox6_2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox6_2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox6_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox6_2.Location = new System.Drawing.Point(70, 54);
+            this.textBox6_2.Name = "textBox6_2";
+            this.textBox6_2.ReadOnly = true;
+            this.textBox6_2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.textBox6_2.Size = new System.Drawing.Size(292, 30);
+            this.textBox6_2.TabIndex = 17;
+            this.textBox6_2.Text = "";
+            // 
+            // textBox5_2
+            // 
+            this.textBox5_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox5_2.CausesValidation = false;
+            this.textBox5_2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox5_2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox5_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox5_2.Location = new System.Drawing.Point(70, 11);
+            this.textBox5_2.Name = "textBox5_2";
+            this.textBox5_2.ReadOnly = true;
+            this.textBox5_2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.textBox5_2.Size = new System.Drawing.Size(292, 30);
+            this.textBox5_2.TabIndex = 16;
+            this.textBox5_2.Text = "";
+            // 
+            // textBox16_2
+            // 
+            this.textBox16_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox16_2.CausesValidation = false;
+            this.textBox16_2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox16_2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox16_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox16_2.Location = new System.Drawing.Point(73, 139);
+            this.textBox16_2.Name = "textBox16_2";
+            this.textBox16_2.ReadOnly = true;
+            this.textBox16_2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.textBox16_2.Size = new System.Drawing.Size(292, 30);
+            this.textBox16_2.TabIndex = 23;
+            this.textBox16_2.Text = "";
+            // 
+            // textBox15_2
+            // 
+            this.textBox15_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox15_2.CausesValidation = false;
+            this.textBox15_2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox15_2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox15_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox15_2.Location = new System.Drawing.Point(73, 97);
+            this.textBox15_2.Name = "textBox15_2";
+            this.textBox15_2.ReadOnly = true;
+            this.textBox15_2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.textBox15_2.Size = new System.Drawing.Size(292, 30);
+            this.textBox15_2.TabIndex = 22;
+            this.textBox15_2.Text = "";
+            // 
+            // textBox14_2
+            // 
+            this.textBox14_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox14_2.CausesValidation = false;
+            this.textBox14_2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox14_2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox14_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox14_2.Location = new System.Drawing.Point(73, 54);
+            this.textBox14_2.Name = "textBox14_2";
+            this.textBox14_2.ReadOnly = true;
+            this.textBox14_2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.textBox14_2.Size = new System.Drawing.Size(292, 30);
+            this.textBox14_2.TabIndex = 21;
+            this.textBox14_2.Text = "";
+            // 
+            // textBox13_2
+            // 
+            this.textBox13_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox13_2.CausesValidation = false;
+            this.textBox13_2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox13_2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox13_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox13_2.Location = new System.Drawing.Point(73, 11);
+            this.textBox13_2.Name = "textBox13_2";
+            this.textBox13_2.ReadOnly = true;
+            this.textBox13_2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.textBox13_2.Size = new System.Drawing.Size(292, 30);
+            this.textBox13_2.TabIndex = 20;
+            this.textBox13_2.Text = "";
+            // 
+            // textBox12_2
+            // 
+            this.textBox12_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox12_2.CausesValidation = false;
+            this.textBox12_2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox12_2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox12_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox12_2.Location = new System.Drawing.Point(73, 139);
+            this.textBox12_2.Name = "textBox12_2";
+            this.textBox12_2.ReadOnly = true;
+            this.textBox12_2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.textBox12_2.Size = new System.Drawing.Size(292, 30);
+            this.textBox12_2.TabIndex = 27;
+            this.textBox12_2.Text = "";
+            // 
+            // textBox11_2
+            // 
+            this.textBox11_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox11_2.CausesValidation = false;
+            this.textBox11_2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox11_2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox11_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox11_2.Location = new System.Drawing.Point(73, 97);
+            this.textBox11_2.Name = "textBox11_2";
+            this.textBox11_2.ReadOnly = true;
+            this.textBox11_2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.textBox11_2.Size = new System.Drawing.Size(292, 30);
+            this.textBox11_2.TabIndex = 26;
+            this.textBox11_2.Text = "";
+            // 
+            // textBox10_2
+            // 
+            this.textBox10_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox10_2.CausesValidation = false;
+            this.textBox10_2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox10_2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox10_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox10_2.Location = new System.Drawing.Point(73, 53);
+            this.textBox10_2.Name = "textBox10_2";
+            this.textBox10_2.ReadOnly = true;
+            this.textBox10_2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.textBox10_2.Size = new System.Drawing.Size(292, 30);
+            this.textBox10_2.TabIndex = 25;
+            this.textBox10_2.Text = "";
+            // 
+            // textBox9_2
+            // 
+            this.textBox9_2.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox9_2.CausesValidation = false;
+            this.textBox9_2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox9_2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox9_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox9_2.Location = new System.Drawing.Point(73, 13);
+            this.textBox9_2.Name = "textBox9_2";
+            this.textBox9_2.ReadOnly = true;
+            this.textBox9_2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.textBox9_2.Size = new System.Drawing.Size(292, 30);
+            this.textBox9_2.TabIndex = 24;
+            this.textBox9_2.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1126,6 +1207,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.firstGroupBox);
             this.Controls.Add(this.updateDiskInfoGroupbox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "QFlash Pro v4.72";
             this.usbInfoGroupbox.ResumeLayout(false);
@@ -1188,10 +1270,6 @@
         private System.Windows.Forms.TextBox serialNumberTextbox;
         private System.Windows.Forms.Label serialNumberLabel;
         private System.Windows.Forms.GroupBox firstGroupBox;
-        private System.Windows.Forms.TextBox textBox4_2;
-        private System.Windows.Forms.TextBox textBox3_2;
-        private System.Windows.Forms.TextBox textBox2_2;
-        private System.Windows.Forms.TextBox textBox1_2;
         private System.Windows.Forms.TextBox textBox4_1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox3_1;
@@ -1201,10 +1279,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox6;
@@ -1214,10 +1288,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox14;
@@ -1227,10 +1297,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox22;
@@ -1244,6 +1310,22 @@
         private System.Windows.Forms.Button massUpdateButton;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button refreshButton;
+        private System.Windows.Forms.RichTextBox textBox1_2;
+        private System.Windows.Forms.RichTextBox textBox4_2;
+        private System.Windows.Forms.RichTextBox textBox3_2;
+        private System.Windows.Forms.RichTextBox textBox2_2;
+        private System.Windows.Forms.RichTextBox textBox8_2;
+        private System.Windows.Forms.RichTextBox textBox7_2;
+        private System.Windows.Forms.RichTextBox textBox6_2;
+        private System.Windows.Forms.RichTextBox textBox5_2;
+        private System.Windows.Forms.RichTextBox textBox16_2;
+        private System.Windows.Forms.RichTextBox textBox15_2;
+        private System.Windows.Forms.RichTextBox textBox14_2;
+        private System.Windows.Forms.RichTextBox textBox13_2;
+        private System.Windows.Forms.RichTextBox textBox12_2;
+        private System.Windows.Forms.RichTextBox textBox11_2;
+        private System.Windows.Forms.RichTextBox textBox10_2;
+        private System.Windows.Forms.RichTextBox textBox9_2;
     }
 }
 

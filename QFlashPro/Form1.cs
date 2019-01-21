@@ -16,19 +16,26 @@ namespace QFlashPro
         private const string DEFAUL_CONTROLLER = "Silicon Motion SM3257EN SE";
         private const string DEFAULT_MEMORY = "Hynix H27QDG8T2B8R MLC";
         private const string UNKNOWN = "Unknown";
+        private RichTextBox[] _usbInfoTextboxes;
 
         private IEnumerable<UsbInfo> _prevUsbInfos;
 
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();           
+            _usbInfoTextboxes = new RichTextBox[] {
+                textBox1_2, textBox2_2, textBox3_2, textBox4_2,
+                textBox5_2, textBox6_2, textBox7_2, textBox8_2,
+                textBox9_2, textBox10_2, textBox11_2, textBox12_2,
+                textBox13_2, textBox14_2, textBox15_2, textBox16_2 };
         }
 
         private void refreshButton_Click(object sender, EventArgs e)
         {
             try
             {
-
+                if(_prevUsbInfos != null)
+                    RefreshBottomView(_prevUsbInfos.ToArray());
             }
             catch(Exception ex)
             {
@@ -51,13 +58,14 @@ namespace QFlashPro
                     MessageBox.Show(null, "No firmware found for this USB dirve", "Error", MessageBoxButtons.OK);
                     return;
                 }
-
+                
                 foreach (var item in _prevUsbInfos)
                 {
                     if (IsFirmUsb(item))
                         continue;
                     TryUpdateFirmware(item);
                 }
+                MessageBox.Show(null, "Successfull", "Updating Firmware", MessageBoxButtons.OK);
             }
             catch (Exception ex)
             {
@@ -82,6 +90,7 @@ namespace QFlashPro
                 }
 
                 TryUpdateFirmware(usbInfo);
+                MessageBox.Show(null, "Successfull", "Updating Firmware", MessageBoxButtons.OK);
             }
             catch (Exception ex)
             {
@@ -108,11 +117,15 @@ namespace QFlashPro
                     }
                 }
 
+                if (_prevUsbInfos != null)
+                    RefreshBottomView(_prevUsbInfos.ToArray());
+
                 var firstDefUsb = _prevUsbInfos.FirstOrDefault();
                 if (firstDefUsb == null)
                     return;
 
-                RefreshView(firstDefUsb);
+                RefreshUpView(firstDefUsb);
+                
             }
             catch (Exception ex)
             {
@@ -141,7 +154,7 @@ namespace QFlashPro
                 sw.WriteByte(minorVersion);
             }
             // File.SetAttributes(path, File.GetAttributes(path) & ~FileAttributes.Hidden);
-            File.SetAttributes(filePath, File.GetAttributes(filePath) | FileAttributes.Hidden);
+            //File.SetAttributes(filePath, File.GetAttributes(filePath) | FileAttributes.Hidden);
         }
         private string GetFirmwareVersion(UsbInfo info)
         {
@@ -172,7 +185,11 @@ namespace QFlashPro
 
             WriteFirmwareVersion(info, "1.14");
 
-            MessageBox.Show(null, "This device will updated", "Updating Firmware", MessageBoxButtons.OK);
+           
+            ProgressBox.Show1(this, true);       
+
+           
+                
         }
 
         private void CorrectDataInfo(IEnumerable<UsbInfo> usbInfos)
@@ -194,26 +211,48 @@ namespace QFlashPro
 
         private bool IsFirmUsb(UsbInfo usbInfo)
         {
-            if (usbInfo.Vid == 8644 && usbInfo.Pid == 8005)
+            if (usbInfo.Vid == 0x8644 && usbInfo.Pid == 0x8005)
                 return true;
             return false;
         }
 
-        private void RefreshView(UsbInfo usbInfo)
+        private void RefreshBottomView(UsbInfo[] usbInfos)
+        {
+            for (int i = 0; i < usbInfos.Length; i++)
+            {
+                _usbInfoTextboxes[i].Text = $"(SG1581) H27UDG8M2MTR(ED3) Cap:{usbInfos[i].MemorySize/1000000}MB ID:{usbInfos[i].SerialNumber} Ver:1.8.6.1.912_JBL_161020";
+                if (IsFirmUsb(usbInfos[i]))
+                    _usbInfoTextboxes[i].BackColor = Color.Orange;
+                else
+                    _usbInfoTextboxes[i].BackColor = Color.Red;
+            }
+            for (int i = usbInfos.Length; i <= 15; i++)
+            {
+                _usbInfoTextboxes[i].BackColor = Color.LightGray;
+            }
+        }
+
+        private void RefreshUpView(UsbInfo usbInfo)
         {
             customInfoTextbox.Text = usbInfo.CustomInfo;
             produceInfoTextbox.Text = usbInfo.ProductInfo;
 
-            vidTextbox.Text = usbInfo.Vid.ToString();
-            pidTextbox.Text = usbInfo.Pid.ToString();
+            vidTextbox.Text = string.Format("{0:x}", usbInfo.Vid);
+            pidTextbox.Text = string.Format("{0:x}", usbInfo.Pid);
 
             customInfoScsiTextbox.Text = usbInfo.ScsiCusomInfo;
             produceInfoScsiTextbox.Text = usbInfo.ScsiProductInfo;
             scsiRevTextbox.Text = usbInfo.ScsiRevision;
 
             controllerTextbox.Text = usbInfo.Controller;
-            memoryTextbox.Text = usbInfo.Memory;
-            serialNumberTextbox.Text = usbInfo.SerialNumber;
+            memoryTextbox.Text = usbInfo.Memory;            
+
+            fixedPrefixTextbox.Text = "1234";
+            autoTextBox.Text = "223";
+            increaseArrangeTextbox.Text = "000000000000";
+            tildaTexbox.Text = "999999999999";
+            serialNumberTextbox.Text = "12340";
+            //serialNumberTextbox.Text = usbInfo.SerialNumber;
         }
       
     }
