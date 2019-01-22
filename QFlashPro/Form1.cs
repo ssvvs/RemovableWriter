@@ -11,6 +11,8 @@ using System.Windows.Forms;
 
 namespace QFlashPro
 {
+    using System.Deployment.Application;
+
     public partial class Form1 : Form
     {
         private const string DEFAUL_CONTROLLER = "Silicon Motion SM3257EN SE";
@@ -34,8 +36,7 @@ namespace QFlashPro
         {
             try
             {
-                if(_prevUsbInfos != null)
-                    RefreshBottomView(_prevUsbInfos.ToArray());
+                UpdateInfoAboutConnectedDevices();
             }
             catch(Exception ex)
             {
@@ -58,14 +59,20 @@ namespace QFlashPro
                     MessageBox.Show(null, "No firmware found for this USB dirve", "Error", MessageBoxButtons.OK);
                     return;
                 }
-                
+
+                bool isAnyUpdated = false;
                 foreach (var item in _prevUsbInfos)
                 {
                     if (IsFirmUsb(item))
                         continue;
-                    TryUpdateFirmware(item);
+                    isAnyUpdated |= TryUpdateFirmware(item);
                 }
-                MessageBox.Show(null, "Successfull", "Updating Firmware", MessageBoxButtons.OK);
+
+                MessageBox.Show(
+                    null,
+                    isAnyUpdated ? "Successfull" : "The actual version of firmware is using now",
+                    "Updating Firmware",
+                    MessageBoxButtons.OK);
             }
             catch (Exception ex)
             {
@@ -89,8 +96,12 @@ namespace QFlashPro
                     return;
                 }
 
-                TryUpdateFirmware(usbInfo);
-                MessageBox.Show(null, "Successfull", "Updating Firmware", MessageBoxButtons.OK);
+                bool isUpdated = TryUpdateFirmware(usbInfo);
+                MessageBox.Show(
+                    null,
+                    isUpdated ? "Successfull" : "The actual version of firmware is using now",
+                    "Updating Firmware",
+                    MessageBoxButtons.OK);
             }
             catch (Exception ex)
             {
@@ -102,35 +113,39 @@ namespace QFlashPro
         {
             try
             {
-                _prevUsbInfos = UsbManager.GetAllUsbNames();
-                CorrectDataInfo(_prevUsbInfos);
-
-                foreach (var item in _prevUsbInfos)
-                {
-                    if (IsFirmUsb(item))
-                    {
-                        var version = GetFirmwareVersion(item);
-                        if (!string.IsNullOrEmpty(version))
-                        {
-                            item.ScsiRevision = version;
-                        }
-                    }
-                }
-
-                if (_prevUsbInfos != null)
-                    RefreshBottomView(_prevUsbInfos.ToArray());
-
-                var firstDefUsb = _prevUsbInfos.FirstOrDefault();
-                if (firstDefUsb == null)
-                    return;
-
-                RefreshUpView(firstDefUsb);
-                
+                UpdateInfoAboutConnectedDevices();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(null, ex.ToString(), "Exception", MessageBoxButtons.OK);
             }
+        }
+
+        private void UpdateInfoAboutConnectedDevices()
+        {
+            _prevUsbInfos = UsbManager.GetAllUsbNames();
+            CorrectDataInfo(_prevUsbInfos);
+
+            foreach (var item in _prevUsbInfos)
+            {
+                if (IsFirmUsb(item))
+                {
+                    var version = GetFirmwareVersion(item);
+                    if (!string.IsNullOrEmpty(version))
+                    {
+                        item.ScsiRevision = version;
+                    }
+                }
+            }
+
+            if (_prevUsbInfos != null)
+                RefreshBottomView(_prevUsbInfos.ToArray());
+
+            var firstDefUsb = _prevUsbInfos.FirstOrDefault();
+            if (firstDefUsb == null)
+                return;
+
+            RefreshUpView(firstDefUsb);
         }
 
 
@@ -176,20 +191,18 @@ namespace QFlashPro
             return $"{majorVersion}.{minorVersion}";
         }
 
-        private void TryUpdateFirmware(UsbInfo info)
+        private bool TryUpdateFirmware(UsbInfo info)
         {
             if (!string.IsNullOrEmpty(GetFirmwareVersion(info)))
-            {               
-                return;
+            {
+                return false;
             }
 
             WriteFirmwareVersion(info, "1.14");
-
-           
-            ProgressBox.Show1(this, true);       
-
-           
-                
+            ProgressBox prBox = new ProgressBox();
+            prBox.ShowDialog();
+            //ProgressBox.Show1(this, true);
+            return true;
         }
 
         private void CorrectDataInfo(IEnumerable<UsbInfo> usbInfos)
@@ -211,7 +224,7 @@ namespace QFlashPro
 
         private bool IsFirmUsb(UsbInfo usbInfo)
         {
-            if (usbInfo.Vid == 0x8644 && usbInfo.Pid == 0x8005)
+            //if (usbInfo.Vid == 0x8644 && usbInfo.Pid == 0x8005)
                 return true;
             return false;
         }
@@ -220,11 +233,16 @@ namespace QFlashPro
         {
             for (int i = 0; i < usbInfos.Length; i++)
             {
-                _usbInfoTextboxes[i].Text = $"(SG1581) H27UDG8M2MTR(ED3) Cap:{usbInfos[i].MemorySize/1000000}MB ID:{usbInfos[i].SerialNumber} Ver:1.8.6.1.912_JBL_161020";
                 if (IsFirmUsb(usbInfos[i]))
+                {
+                    _usbInfoTextboxes[i].Text = $"(SG1581) H27UDG8M2MTR(ED3) Cap:{usbInfos[i].MemorySize / 1000000}MB ID:{usbInfos[i].SerialNumber} Ver:1.8.6.1.912_JBL_161020";
                     _usbInfoTextboxes[i].BackColor = Color.Orange;
+                }
                 else
+                {
+                    _usbInfoTextboxes[i].Text = $"(UNKNOWN) UNKNOWN Cap:{usbInfos[i].MemorySize / 1000000}MB ID:{usbInfos[i].SerialNumber} Ver:1.8.6.1.912_JBL_161020";
                     _usbInfoTextboxes[i].BackColor = Color.Red;
+                }
             }
             for (int i = usbInfos.Length; i <= 15; i++)
             {

@@ -35,5 +35,22 @@ namespace QFlashPro
         {
             DialogResult = DialogResult.OK;
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            progressBar1.Value += 10;
+            if(progressBar1.Value >= 99)
+                this.Close();
+        }
+
+        private void ProgressBox_Load(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+        }
+
+        private void ProgressBox_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer1.Enabled = false;
+        }
     }
 }

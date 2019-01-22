@@ -91,5 +91,14 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\3.jpg" />
+    <EmbeddedResource Include="Properties\4.jpg" />
+    <EmbeddedResource Include="Properties\5.jpg" />
+    <EmbeddedResource Include="Properties\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\583aaf9d43101.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
