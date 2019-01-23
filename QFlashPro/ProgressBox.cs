@@ -38,8 +38,8 @@ namespace QFlashPro
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            progressBar1.Value += 10;
-            if(progressBar1.Value >= 99)
+            progressBar1.Value += 8;
+            if(progressBar1.Value >= 90)
                 this.Close();
         }
 

@@ -18,6 +18,9 @@ namespace QFlashPro
         private const string DEFAUL_CONTROLLER = "Silicon Motion SM3257EN SE";
         private const string DEFAULT_MEMORY = "Hynix H27QDG8T2B8R MLC";
         private const string UNKNOWN = "Unknown";
+
+        private const string WARN_NO_FIRMWARE = "No firmware found for this USB drive";
+        private const string WARN_FIRWARE_ACTUAL = "The actual version of firmware is using now";
         private RichTextBox[] _usbInfoTextboxes;
 
         private IEnumerable<UsbInfo> _prevUsbInfos;
@@ -56,23 +59,28 @@ namespace QFlashPro
 
                 if (_prevUsbInfos == null)
                 {
-                    MessageBox.Show(null, "No firmware found for this USB dirve", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(null, WARN_NO_FIRMWARE, "Error", MessageBoxButtons.OK);
                     return;
                 }
 
-                bool isAnyUpdated = false;
-                foreach (var item in _prevUsbInfos)
+                if (_prevUsbInfos.Any(d => !IsFirmUsb(d)))
                 {
-                    if (IsFirmUsb(item))
-                        continue;
-                    isAnyUpdated |= TryUpdateFirmware(item);
+                    MessageBox.Show(null, WARN_NO_FIRMWARE, "Error", MessageBoxButtons.OK);
+                    return;
                 }
 
-                MessageBox.Show(
-                    null,
-                    isAnyUpdated ? "Successfull" : "The actual version of firmware is using now",
-                    "Updating Firmware",
-                    MessageBoxButtons.OK);
+                if (_prevUsbInfos.Any(d => !string.IsNullOrEmpty(GetFirmwareVersion(d))))
+                {
+                    MessageBox.Show(null, WARN_FIRWARE_ACTUAL, "Error", MessageBoxButtons.OK);
+                    return;
+                }
+               
+                foreach (var item in _prevUsbInfos)
+                {
+                    TryUpdateFirmware(item);
+                }
+
+                MessageBox.Show(null, "Successfull", "Updating Firmware",MessageBoxButtons.OK);
             }
             catch (Exception ex)
             {
@@ -86,20 +94,20 @@ namespace QFlashPro
             {
                 if (_prevUsbInfos == null)
                 {
-                    MessageBox.Show(null, "No firmware found for this USB dirve", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(null, WARN_NO_FIRMWARE, "Error", MessageBoxButtons.OK);
                     return;
                 }
                 var usbInfo = _prevUsbInfos.FirstOrDefault(c => IsFirmUsb(c));
                 if (usbInfo == null)
                 {
-                    MessageBox.Show(null, "No firmware found for this USB dirve", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(null, WARN_NO_FIRMWARE, "Error", MessageBoxButtons.OK);
                     return;
                 }
 
                 bool isUpdated = TryUpdateFirmware(usbInfo);
                 MessageBox.Show(
                     null,
-                    isUpdated ? "Successfull" : "The actual version of firmware is using now",
+                    isUpdated ? "Successfull" : WARN_FIRWARE_ACTUAL,
                     "Updating Firmware",
                     MessageBoxButtons.OK);
             }
@@ -224,7 +232,7 @@ namespace QFlashPro
 
         private bool IsFirmUsb(UsbInfo usbInfo)
         {
-            //if (usbInfo.Vid == 0x8644 && usbInfo.Pid == 0x8005)
+            if (usbInfo.Vid == 0x8644 && usbInfo.Pid == 0x8005)
                 return true;
             return false;
         }
@@ -246,6 +254,7 @@ namespace QFlashPro
             }
             for (int i = usbInfos.Length; i <= 15; i++)
             {
+                _usbInfoTextboxes[i].Text = string.Empty;
                 _usbInfoTextboxes[i].BackColor = Color.LightGray;
             }
         }
@@ -271,6 +280,28 @@ namespace QFlashPro
             tildaTexbox.Text = "999999999999";
             serialNumberTextbox.Text = "12340";
             //serialNumberTextbox.Text = usbInfo.SerialNumber;
+        }
+
+        private void ClearUpView()
+        {
+            customInfoTextbox.Text = string.Empty;
+            produceInfoTextbox.Text = string.Empty; 
+
+            vidTextbox.Text = string.Empty;
+            pidTextbox.Text = string.Empty;
+
+            customInfoScsiTextbox.Text = string.Empty;
+            produceInfoScsiTextbox.Text = string.Empty;
+            scsiRevTextbox.Text = string.Empty;
+
+            controllerTextbox.Text = string.Empty;
+            memoryTextbox.Text = string.Empty;
+
+            fixedPrefixTextbox.Text = string.Empty;
+            autoTextBox.Text = string.Empty;
+            increaseArrangeTextbox.Text = string.Empty;
+            tildaTexbox.Text = string.Empty;
+            serialNumberTextbox.Text = string.Empty;
         }
       
     }
