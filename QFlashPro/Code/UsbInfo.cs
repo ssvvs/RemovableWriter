@@ -19,6 +19,6 @@
         public string Memory { get; set; }
         public string VolumeLabel { get; set; }
         public string SerialNumber { get; set; }
-
+       
     }
 }

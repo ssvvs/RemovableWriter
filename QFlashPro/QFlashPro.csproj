@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\Logger.cs" />
     <Compile Include="Code\UsbInfo.cs" />
     <Compile Include="Code\UsbManager.cs" />
     <Compile Include="Form1.cs">

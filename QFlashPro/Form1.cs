@@ -22,10 +22,11 @@ namespace QFlashPro
         private const string WARN_NO_FIRMWARE = "No firmware found for this USB drive";
         private const string WARN_FIRWARE_ACTUAL = "The actual version of firmware is using now";
         private RichTextBox[] _usbInfoTextboxes;
+        private Logger _logger;
 
         private IEnumerable<UsbInfo> _prevUsbInfos;
 
-        public Form1()
+        public Form1(string[] args)
         {
             InitializeComponent();           
             _usbInfoTextboxes = new RichTextBox[] {
@@ -33,6 +34,9 @@ namespace QFlashPro
                 textBox5_2, textBox6_2, textBox7_2, textBox8_2,
                 textBox9_2, textBox10_2, textBox11_2, textBox12_2,
                 textBox13_2, textBox14_2, textBox15_2, textBox16_2 };
+            _logger = new Logger();
+            _logger.SetSettings(args);
+            UsbManager.Logger = _logger;
         }
 
         private void refreshButton_Click(object sender, EventArgs e)
@@ -143,6 +147,10 @@ namespace QFlashPro
                     {
                         item.ScsiRevision = version;
                     }
+                    else
+                    {
+                        item.ScsiRevision = "1.0";
+                    }
                 }
             }
 
@@ -232,7 +240,10 @@ namespace QFlashPro
 
         private bool IsFirmUsb(UsbInfo usbInfo)
         {
-            if (usbInfo.Vid == 0x8644 && usbInfo.Pid == 0x8005)
+            if ((usbInfo.Vid == 0x8644 && usbInfo.Pid == 0x8005)||
+                (usbInfo.Vid == 0x090C && usbInfo.Pid == 0x1000)
+                //||(usbInfo.Vid == 0x058F && usbInfo.Pid == 0x6387)
+                )
                 return true;
             return false;
         }

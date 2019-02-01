@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.IO;
     using System.Linq;
     using System.Management;
@@ -10,10 +11,13 @@
 
     public class UsbManager
     {
+        public static Logger Logger { get; set; }
+        
         public static bool GetDriveVidPid(string szDriveName, ref UsbInfo info)
         {
             bool bResult = false;
             string szSerialNumberDevice = null;
+            Logger.Debug(() => $"GetDriveVidPid worked");
 
             ManagementObject oLogicalDisk = new ManagementObject("Win32_LogicalDisk.DeviceID='" + szDriveName.TrimEnd('\\') + "'");
             foreach (ManagementObject oDiskPartition in oLogicalDisk.GetRelated("Win32_DiskPartition"))
@@ -21,8 +25,12 @@
                 foreach (ManagementObject oDiskDrive in oDiskPartition.GetRelated("Win32_DiskDrive"))
                 {
                     string szPNPDeviceID = oDiskDrive["PNPDeviceID"].ToString();
+
+                    Logger.Debug(() => $"PnpDeviceId = {szPNPDeviceID}");
+
                     if (!szPNPDeviceID.StartsWith("USBSTOR"))
                         throw new Exception(szDriveName + " ist kein USB-Laufwerk.");
+
 
                     info.SerialNumber = parseSerialFromDeviceID(szPNPDeviceID);
                     info.ScsiRevision = parseRevFromDeviceID(szPNPDeviceID);
@@ -34,6 +42,8 @@
 
                     string[] aszToken = szPNPDeviceID.Split(new char[] { '\\', '&' });
                     szSerialNumberDevice = aszToken[aszToken.Length - 2];
+                    string deviceNumber = szSerialNumberDevice;
+                    Logger.Debug(() => $"serial number device = {deviceNumber}");
                 }
             }
 
@@ -47,6 +57,10 @@
                         continue;
 
                     string szDeviceID = oValue.ToString();
+
+                    Logger.Debug(() => $"szDeviceID = {szDeviceID}");
+
+
                     string[] aszToken = szDeviceID.Split(new char[] { '\\' });
                     if (szSerialNumberDevice != aszToken[aszToken.Length - 1])
                         continue;
@@ -55,8 +69,11 @@
                     if (0 > nTemp)
                         continue;
 
-                    nTemp += 4;                    
-                    info.Vid = ushort.Parse(szDeviceID.Substring(nTemp, 4), System.Globalization.NumberStyles.AllowHexSpecifier); 
+                    nTemp += 4;
+                    string sVid = szDeviceID.Substring(nTemp, 4);
+                    info.Vid = ushort.Parse(sVid, System.Globalization.NumberStyles.AllowHexSpecifier);
+                   
+                    Logger.Debug(() => $"vid = {sVid}");
 
                     nTemp += 4;
                     nTemp = szDeviceID.IndexOf(@"PID_", nTemp);
@@ -64,7 +81,9 @@
                         continue;
 
                     nTemp += 4;
-                    info.Pid = ushort.Parse(szDeviceID.Substring(nTemp, 4), System.Globalization.NumberStyles.AllowHexSpecifier);                    
+                    string sPid = szDeviceID.Substring(nTemp, 4);
+                    info.Pid = ushort.Parse(sPid, System.Globalization.NumberStyles.AllowHexSpecifier);
+                    Logger.Debug(() => $"pid = {sVid}");
                     bResult = true;
                     break;
                 }
@@ -75,56 +94,95 @@
 
         private static string parseSerialFromDeviceID(string deviceId)
         {
-            string[] splitDeviceId = deviceId.Split('\\');
-            string[] serialArray;
-            string serial;
-            int arrayLen = splitDeviceId.Length - 1;
+            Logger.Debug(() => $" parseSerial from id = {deviceId}");
+            try
+            {
+                string[] splitDeviceId = deviceId.Split('\\');
+                string[] serialArray;
+                string serial;
+                int arrayLen = splitDeviceId.Length - 1;
 
-            serialArray = splitDeviceId[arrayLen].Split('&');
-            serial = serialArray[0];
+                serialArray = splitDeviceId[arrayLen].Split('&');
+                serial = serialArray[0];
 
-            long sn = long.Parse(serial,System.Globalization.NumberStyles.AllowHexSpecifier);
+                return serial;
+            }
+            catch (Exception ex)
+            {
+                Logger.Debug(() => $"{ex}");
+            }
 
-            return serial;
+            return string.Empty;
         }
 
         private static string parseVenFromDeviceID(string deviceId)
         {
-            string[] splitDeviceId = deviceId.Split('\\');
-            string Ven;
-            //Разбиваем строку на несколько частей. 
-            //Каждая чаcть отделяется по символу &
-            string[] splitVen = splitDeviceId[1].Split('&');
+            Logger.Debug(() => $" parsevendor from id = {deviceId}");
 
-            Ven = splitVen[1].Replace("VEN_", "");
-            Ven = Ven.Replace("_", " ");
-            return Ven;
+            try
+            {
+
+                string[] splitDeviceId = deviceId.Split('\\');
+                string Ven;
+                //Разбиваем строку на несколько частей. 
+                //Каждая чаcть отделяется по символу &
+                string[] splitVen = splitDeviceId[1].Split('&');
+
+                Ven = splitVen[1].Replace("VEN_", "");
+                Ven = Ven.Replace("_", " ");
+                return Ven;
+            }
+            catch (Exception ex)
+            {
+                Logger.Debug(() => $"{ex}");
+            }
+
+            return string.Empty;
         }
 
         private static string parseProdFromDeviceID(string deviceId)
         {
-            string[] splitDeviceId = deviceId.Split('\\');
-            string Prod;
-            //Разбиваем строку на несколько частей. 
-            //Каждая чаcть отделяется по символу &
-            string[] splitProd = splitDeviceId[1].Split('&');
+            try
+            {
+                string[] splitDeviceId = deviceId.Split('\\');
+                string Prod;
+                //Разбиваем строку на несколько частей. 
+                //Каждая чаcть отделяется по символу &
+                string[] splitProd = splitDeviceId[1].Split('&');
 
-            Prod = splitProd[2].Replace("PROD_", ""); ;
-            Prod = Prod.Replace("_", " ");
-            return Prod;
+                Prod = splitProd[2].Replace("PROD_", "");
+                Prod = Prod.Replace("_", " ");
+                return Prod;
+            }
+            catch (Exception ex)
+            {
+                Logger.Debug(() => $"{ex}");
+            }
+
+            return string.Empty;
         }
 
         private static string parseRevFromDeviceID(string deviceId)
         {
-            string[] splitDeviceId = deviceId.Split('\\');
-            string Rev;
-            //Разбиваем строку на несколько частей. 
-            //Каждая чаcть отделяется по символу &
-            string[] splitRev = splitDeviceId[1].Split('&');
+            try
+            {
+                string[] splitDeviceId = deviceId.Split('\\');
+                string Rev;
+                //Разбиваем строку на несколько частей. 
+                //Каждая чаcть отделяется по символу &
+                string[] splitRev = splitDeviceId[1].Split('&');
 
-            Rev = splitRev[3].Replace("REV_", ""); ;
-            Rev = Rev.Replace("_", " ");
-            return Rev;
+                Rev = splitRev[3].Replace("REV_", "");
+                ;
+                Rev = Rev.Replace("_", " ");
+                return Rev;
+            }
+            catch (Exception ex)
+            {
+                Logger.Debug(() => $"{ex}");
+            }
+
+            return string.Empty;
         }
 
 
@@ -140,8 +198,8 @@
                 string diskName = drive.Name;               
                 // Add the HDD to the list (use the Model field as the item's caption)
                 UsbInfo curUsbInfo = new UsbInfo();
+                Logger.Debug(() => $"Getting info from {diskName}");
                 GetDriveVidPid(diskName, ref curUsbInfo);
-
 
                 curUsbInfo.MemorySize = drive.TotalSize;
                 curUsbInfo.VolumeLabel = diskName;
