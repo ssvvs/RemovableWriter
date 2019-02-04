@@ -11,8 +11,6 @@ using System.Windows.Forms;
 
 namespace QFlashPro
 {
-    using System.Deployment.Application;
-
     public partial class Form1 : Form
     {
         private const string DEFAUL_CONTROLLER = "Silicon Motion SM3257EN SE";
@@ -24,10 +22,21 @@ namespace QFlashPro
         private RichTextBox[] _usbInfoTextboxes;
         private Logger _logger;
 
+        private readonly string _curProgVersion;
+        private readonly string _curFirmVersion;
+
+        private Dictionary<string, string> _versionMapper;
+
         private IEnumerable<UsbInfo> _prevUsbInfos;
 
-        public Form1(string[] args)
+        public Form1(string curVersion, string[] args)
         {
+            _versionMapper = new Dictionary<string, string>();
+            _versionMapper.Add("3.95", "0.87");
+            _versionMapper.Add("4.11", "1.0");
+            _versionMapper.Add("4.72", "1.14");
+            _curProgVersion = curVersion;
+            _curFirmVersion = _versionMapper[curVersion];
             InitializeComponent();           
             _usbInfoTextboxes = new RichTextBox[] {
                 textBox1_2, textBox2_2, textBox3_2, textBox4_2,
@@ -51,6 +60,22 @@ namespace QFlashPro
             }
         }
 
+        private bool IsActualVersion(string readed)
+        {
+            if (string.IsNullOrEmpty(_curFirmVersion) || string.IsNullOrEmpty(_curFirmVersion))
+                return false;
+
+            if (!double.TryParse(_curFirmVersion, out double currentVersion))
+                return false;
+            if (!double.TryParse(readed, out double readedVersion))
+                return false;
+
+            if (readedVersion < currentVersion)
+                return false;
+
+            return true;
+        }
+
         private void exitButton_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
@@ -60,7 +85,6 @@ namespace QFlashPro
         {
             try
             {
-
                 if (_prevUsbInfos == null)
                 {
                     MessageBox.Show(null, WARN_NO_FIRMWARE, "Error", MessageBoxButtons.OK);
@@ -73,7 +97,7 @@ namespace QFlashPro
                     return;
                 }
 
-                if (_prevUsbInfos.Any(d => !string.IsNullOrEmpty(GetFirmwareVersion(d))))
+                if (_prevUsbInfos.Any(d => IsActualVersion(GetFirmwareVersion(d))))
                 {
                     MessageBox.Show(null, WARN_FIRWARE_ACTUAL, "Error", MessageBoxButtons.OK);
                     return;
@@ -209,12 +233,12 @@ namespace QFlashPro
 
         private bool TryUpdateFirmware(UsbInfo info)
         {
-            if (!string.IsNullOrEmpty(GetFirmwareVersion(info)))
+            if (IsActualVersion(GetFirmwareVersion(info)))
             {
                 return false;
             }
 
-            WriteFirmwareVersion(info, "1.14");
+            WriteFirmwareVersion(info, _curFirmVersion);
             ProgressBox prBox = new ProgressBox();
             prBox.ShowDialog();
             //ProgressBox.Show1(this, true);

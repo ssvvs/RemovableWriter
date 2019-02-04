@@ -1209,7 +1209,7 @@
             this.Controls.Add(this.updateDiskInfoGroupbox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "QFlash Pro v4.72";
+            this.Text = $"QFlash Pro v{_curProgVersion}";
             this.usbInfoGroupbox.ResumeLayout(false);
             this.usbInfoGroupbox.PerformLayout();
             this.vidPidGroupbox.ResumeLayout(false);

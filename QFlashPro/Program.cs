@@ -15,7 +15,7 @@ namespace QFlashPro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1(args));
+            Application.Run(new Form1("4.72", args));
         }
     }
 }
