@@ -15,5 +15,30 @@ namespace Rawfutility
         {
             InitializeComponent();
         }
+
+        private void updateDiskInfoBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void updateFirmwareBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void massUpdateBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
